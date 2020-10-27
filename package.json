@@ -1,0 +1,21 @@
+{
+  "name": "tdd-katas",
+  "version": "0.0.1",
+  "description": "Training exercises for TDD on plain JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RominaManzano/TDD-katas"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}
