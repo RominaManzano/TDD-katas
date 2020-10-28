@@ -8,6 +8,9 @@ const getMaxFromList = numbers => numbers.length === 0 ? null : Math.max(...numb
 // Función que reciba una lista de números que pueden ser repetidos pero no consecutivos
 
 // Función que haga/simule un fetch y devuelva la data esperada
+const axios = require('axios');
+const getTodo = () => axios.get("https://jsonplaceholder.typicode.com/todos/1")
+  .then(res=>res.data)
 
 // Función que reciba un array y valide si todos sus elementos son números 
 
@@ -15,4 +18,5 @@ const getMaxFromList = numbers => numbers.length === 0 ? null : Math.max(...numb
 
 module.exports = {
   getMaxFromList,
+  getTodo
 };
