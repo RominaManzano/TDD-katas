@@ -46,11 +46,11 @@ describe('getTodo', () => {
 })
 
 describe('isPair', () => {
-    it('should return null if the param is not a number', () => {
+    it('should return null if the param is not integer', () => {
         expect(functions.isPair('Testing')).toBe(null);
     });
 
-    it('should return true from give list', () => {
+    it('should return true from give even list', () => {
         const tests = [2, 20, 22];
 
         tests.forEach((number) => {
@@ -58,7 +58,7 @@ describe('isPair', () => {
         });
     });
 
-    it('should return false from give list', () => {
+    it('should return false from give odd list', () => {
         const tests = [3, 15, -1];
 
         tests.forEach((number) => {
