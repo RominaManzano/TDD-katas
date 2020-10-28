@@ -18,7 +18,6 @@ describe('getMaxFromList', () => {
   });
 });
 
-<<<<<<< HEAD
 
 describe('getArray', () => {
   it('should return array from string', () => {
@@ -36,7 +35,6 @@ describe('getArray', () => {
 getArray(text) {
   return Array.from(text)
 }
-=======
 describe('isPair', () => {
   it('should return null if the param is not a number', () => {
     expect(functions.isPair('Testing')).toBe(null);
@@ -58,4 +56,3 @@ describe('isPair', () => {
     });
   });
 });
->>>>>>> a786021ce6f6a37a11205f5aa9c01d4a50cbded7
