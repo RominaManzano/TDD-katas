@@ -18,20 +18,32 @@ describe('getMaxFromList', () => {
   });
 });
 
-
-describe('getArray', () => {
-  it('should return array from string', () => {
-    const tests = [
-      { string: '', expected: [] },
-      { string: 'abcdefg', expected: ['a', 'b', 'c', 'd', 'e', 'f', 'g'] },
-      { string: 'aeiou', expected: ['a','e','i','o','u'] },
-    ];
-    tests.forEach(({ string, expected }) => {
-      expect(functions.getArray(string)).toBe(expected);
-    });
+describe('getTodo', () => {
+  it("Should return a todo",()=>{
+    return functions.getTodo().then(data => {
+      expect(data).toBeDefined()
   });
-});
-
+  })
+  
+  it("A todo should be an object with these props",()=>{
+    return functions.getTodo().then(data => {
+      expect(data).toEqual(
+        expect.objectContaining({
+        "userId": expect.any(Number),
+        "id": expect.any(Number),
+        "title": expect.any(String),
+        "completed": expect.any(Boolean)
+      })
+      )
+  });
+  })
+  
+  it("Should have title", ()=>{
+    return functions.getTodo().then(data => {
+      expect(data.title).toEqual('delectus aut autem')
+  });
+}) 
+})
 
 describe('isPair', () => {
   it('should return null if the param is not a number', () => {
@@ -51,6 +63,36 @@ describe('isPair', () => {
 
     tests.forEach((number) => {
       expect(functions.isPair(number)).toBe(false);
+    });
+  });
+});
+
+describe('checkArray', () => {
+  it('should return null if list is empty', () => {
+    expect(functions.checkArray([])).toBe(null);
+  });
+
+  it('should return yes or no if the array have numbers', () => {
+    const tests = [
+      { exampleArray: [1, 2, 3, 4], expected: 'yes' },
+      { exampleArray: [110, 86, 550, 'Mario'], expected: 'no' },
+    ];
+
+    tests.forEach(({ exampleArray, expected }) => {
+      expect(functions.checkArray(exampleArray)).toBe(expected);
+    });
+  });
+});
+
+describe('getArray', () => {
+  it('should return array from string', () => {
+    const tests = [
+      { string: '', expected: [] },
+      { string: 'abcdefg', expected: ['a', 'b', 'c', 'd', 'e', 'f', 'g'] },
+      { string: 'aeiou', expected: ['a', 'e', 'i', 'o', 'u'] },
+    ];
+    tests.forEach(({ string, expected }) => {
+      expect(functions.getArray(string)).toBe(expected);
     });
   });
 });
