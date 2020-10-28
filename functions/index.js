@@ -10,4 +10,25 @@
 
 // Función que reciba un array y valide si todos sus elementos son números 
 
+const checkArray = exampleArray => {
+  const regex = /^[0-9\b]+$/;
+  let result = '';
+
+  exampleArray.forEach(
+    exampleAr => {
+      if (regex.test(exampleAr)) {
+        result = 'yes'
+      } else {
+        result = 'no'
+      }
+    }
+  );
+
+  return result ? result : null;
+};
+
 // Función que divida un string en un array
+
+module.exports = {
+  checkArray,
+};
