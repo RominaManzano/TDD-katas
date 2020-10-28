@@ -95,3 +95,16 @@ describe('checkArray', () => {
     });
   });
 });
+
+describe('getArray', () => {
+  it('should return array from string', () => {
+    const tests = [
+      { string: '', expected: [] },
+      { string: 'abcdefg', expected: ['a', 'b', 'c', 'd', 'e', 'f', 'g'] },
+      { string: 'aeiou', expected: ['a', 'e', 'i', 'o', 'u'] },
+    ];
+    tests.forEach(({ string, expected }) => {
+      expect(functions.getArray(string)).toBe(expected);
+    });
+  });
+});
