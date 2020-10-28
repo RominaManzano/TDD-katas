@@ -17,12 +17,8 @@ const getArray = string => string === '' ? null : getArray(string);
 
 module.exports = {
   getMaxFromList,
-<<<<<<< HEAD
 };
 
 module.exports = {
   getArray,
-=======
-  isPair
->>>>>>> a786021ce6f6a37a11205f5aa9c01d4a50cbded7
 };
