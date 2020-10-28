@@ -39,3 +39,16 @@ describe('isPair', () => {
     });
   });
 });
+
+describe('repeatedNotConsecutive', () => {
+
+  it('should return false if they are not consecutive', () => {
+    const tests = [9, 10, 9];
+    expect(functions.repeatedNotConsecutive(tests)).toBe(false);
+  });
+
+  it('It should return true if they are consecutive', () => {
+    const tests = [2, 2, 3];
+    expect(functions.repeatedNotConsecutive(tests)).toBe(true);
+  });
+});
