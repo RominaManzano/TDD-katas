@@ -19,30 +19,30 @@ describe('getMaxFromList', () => {
 });
 
 describe('getTodo', () => {
-  it("Should return a todo",()=>{
+  it("Should return a todo", () => {
     return functions.getTodo().then(data => {
       expect(data).toBeDefined()
-  });
+    });
   })
-  
-  it("A todo should be an object with these props",()=>{
+
+  it("A todo should be an object with these props", () => {
     return functions.getTodo().then(data => {
       expect(data).toEqual(
         expect.objectContaining({
-        "userId": expect.any(Number),
-        "id": expect.any(Number),
-        "title": expect.any(String),
-        "completed": expect.any(Boolean)
-      })
+          "userId": expect.any(Number),
+          "id": expect.any(Number),
+          "title": expect.any(String),
+          "completed": expect.any(Boolean)
+        })
       )
-  });
+    });
   })
-  
-  it("Should have title", ()=>{
+
+  it("Should have title", () => {
     return functions.getTodo().then(data => {
       expect(data.title).toEqual('delectus aut autem')
-  });
-}) 
+    });
+  })
 })
 
 describe('isPair', () => {
@@ -64,6 +64,18 @@ describe('isPair', () => {
     tests.forEach((number) => {
       expect(functions.isPair(number)).toBe(false);
     });
+  });
+});
+
+describe('repeatedNotConsecutive', () => {
+  it('should return false if they are not consecutive', () => {
+    const tests = [9, 10, 9];
+    expect(functions.repeatedNotConsecutive(tests)).toBe(false);
+  });
+
+  it('It should return true if they are consecutive', () => {
+    const tests = [2, 2, 3];
+    expect(functions.repeatedNotConsecutive(tests)).toBe(true);
   });
 });
 
