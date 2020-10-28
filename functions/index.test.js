@@ -23,8 +23,8 @@ describe('getArray', () => {
   it('should return array from string', () => {
     const tests = [
       { string: '', expected: [] },
-      { string: 'abcdefg', expected: [a, b, c, d, e, f, g] },
-      { string: 'aeiou', expected: [a,e,i,o,u] },
+      { string: 'abcdefg', expected: ['a', 'b', 'c', 'd', 'e', 'f', 'g'] },
+      { string: 'aeiou', expected: ['a','e','i','o','u'] },
     ];
     tests.forEach(({ string, expected }) => {
       expect(functions.getArray(string)).toBe(expected);
@@ -32,9 +32,7 @@ describe('getArray', () => {
   });
 });
 
-getArray(text) {
-  return Array.from(text)
-}
+
 describe('isPair', () => {
   it('should return null if the param is not a number', () => {
     expect(functions.isPair('Testing')).toBe(null);

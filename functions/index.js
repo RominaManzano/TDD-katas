@@ -2,7 +2,7 @@
 const getMaxFromList = numbers => numbers.length > 0 ? Math.max(...numbers) : null;
 
 // Función para validar si un número es par
-const isPair = number => Number.isInteger(number) ? (number % 2 === 0) : null
+const isPair = number => Number.isInteger(number) ? (number % 2 === 0) : null;
 
 // Función que valide un password (sólo longitud y que sea alfanumérico)
 
@@ -13,12 +13,9 @@ const isPair = number => Number.isInteger(number) ? (number % 2 === 0) : null
 // Función que reciba un array y valide si todos sus elementos son números 
 
 // Función que divida un string en un array
-const getArray = string => string === '' ? null : getArray(string);
+const getArray = text => Array.from(text);
 
 module.exports = {
   getMaxFromList,
-};
-
-module.exports = {
   getArray,
 };
