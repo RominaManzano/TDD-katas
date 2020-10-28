@@ -1,5 +1,5 @@
 // Función que reciba una lista de números, y nos devuelva el mayor
-const getMaxFromList = numbers => numbers.length === 0 ? null : Math.max(...numbers);
+const getMaxFromList = numbers => numbers.length > 0 ? Math.max(...numbers) : null;
 
 // Función para validar si un número es par
 
