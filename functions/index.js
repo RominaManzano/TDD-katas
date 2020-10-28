@@ -1,4 +1,5 @@
 // Función que reciba una lista de números, y nos devuelva el mayor
+const getMaxFromList = numbers => numbers.length === 0 ? null : Math.max(...numbers);
 
 // Función para validar si un número es par
 
@@ -11,3 +12,7 @@
 // Función que reciba un array y valide si todos sus elementos son números 
 
 // Función que divida un string en un array
+
+module.exports = {
+  getMaxFromList,
+};
