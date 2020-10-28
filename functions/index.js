@@ -16,5 +16,5 @@ const isPair = number => Number.isInteger(number) ? (number % 2 === 0) : null
 
 module.exports = {
   getMaxFromList,
-  isPair
+  isPair,
 };
