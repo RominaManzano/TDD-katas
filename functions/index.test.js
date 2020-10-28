@@ -59,3 +59,68 @@ describe('Verify password', () => {
     });
   });
 });
+describe('getTodo', () => {
+  it("Should return a todo",()=>{
+    return functions.getTodo().then(data => {
+      expect(data).toBeDefined()
+  });
+  })
+  
+  it("A todo should be an object with these props",()=>{
+    return functions.getTodo().then(data => {
+      expect(data).toEqual(
+        expect.objectContaining({
+        "userId": expect.any(Number),
+        "id": expect.any(Number),
+        "title": expect.any(String),
+        "completed": expect.any(Boolean)
+      })
+      )
+  });
+  })
+  
+  it("Should have title", ()=>{
+    return functions.getTodo().then(data => {
+      expect(data.title).toEqual('delectus aut autem')
+  });
+}) 
+})
+
+describe('isPair', () => {
+  it('should return null if the param is not integer', () => {
+    expect(functions.isPair('Testing')).toBe(null);
+  });
+
+  it('should return true from give even list', () => {
+    const tests = [2, 20, 22];
+
+    tests.forEach((number) => {
+      expect(functions.isPair(number)).toBe(true);
+    });
+  });
+
+  it('should return false from give odd list', () => {
+    const tests = [3, 15, -1];
+
+    tests.forEach((number) => {
+      expect(functions.isPair(number)).toBe(false);
+    });
+  });
+});
+
+describe('checkArray', () => {
+  it('should return null if list is empty', () => {
+    expect(functions.checkArray([])).toBe(null);
+  });
+
+  it('should return yes or no if the array have numbers', () => {
+    const tests = [
+      { exampleArray: [1, 2, 3, 4], expected: 'yes' },
+      { exampleArray: [110, 86, 550, 'Mario'], expected: 'no' },
+    ];
+
+    tests.forEach(({ exampleArray, expected }) => {
+      expect(functions.checkArray(exampleArray)).toBe(expected);
+    });
+  });
+});
