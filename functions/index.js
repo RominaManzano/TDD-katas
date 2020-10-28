@@ -12,7 +12,12 @@ const getMaxFromList = numbers => numbers.length === 0 ? null : Math.max(...numb
 // Función que reciba un array y valide si todos sus elementos son números 
 
 // Función que divida un string en un array
+const getArray = string => string === '' ? null : getArray(string);
 
 module.exports = {
   getMaxFromList,
+};
+
+module.exports = {
+  getArray,
 };
