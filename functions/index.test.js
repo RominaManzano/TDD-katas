@@ -17,3 +17,25 @@ describe('getMaxFromList', () => {
     });
   });
 });
+
+describe('isPair', () => {
+  it('should return null if the param is not a number', () => {
+    expect(functions.isPair('Testing')).toBe(null);
+  });
+
+  it('should return true from give list', () => {
+    const tests = [2, 20, 22];
+
+    tests.forEach((number) => {
+      expect(functions.isPair(number)).toBe(true);
+    });
+  });
+
+  it('should return false from give list', () => {
+    const tests = [3, 15, -1];
+
+    tests.forEach((number) => {
+      expect(functions.isPair(number)).toBe(false);
+    });
+  });
+});
