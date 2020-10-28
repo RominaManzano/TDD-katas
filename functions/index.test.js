@@ -44,6 +44,7 @@ describe('getTodo', () => {
   });
 }) 
 })
+
 describe('isPair', () => {
   it('should return null if the param is not a number', () => {
     expect(functions.isPair('Testing')).toBe(null);
