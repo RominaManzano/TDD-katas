@@ -11,31 +11,39 @@ const isPair = number => Number.isInteger(number) ? (number % 2 === 0) : null
 // Función que haga/simule un fetch y devuelva la data esperada
 const axios = require('axios');
 const getTodo = () => axios.get("https://jsonplaceholder.typicode.com/todos/1")
-  .then(res=>res.data)
+    .then(res => res.data)
 
 // Función que reciba un array y valide si todos sus elementos son números 
 const checkArray = exampleArray => {
-  const regex = /^[0-9\b]+$/;
-  let result = '';
+    const regex = /^[0-9\b]+$/;
+    let result = '';
 
-  exampleArray.forEach(
-    exampleAr => {
-      if (regex.test(exampleAr)) {
-        result = 'yes'
-      } else {
-        result = 'no'
-      }
-    }
-  );
+    exampleArray.forEach(
+        exampleAr => {
+            if (regex.test(exampleAr)) {
+                result = 'yes'
+            } else {
+                result = 'no'
+            }
+        }
+    );
 
-  return result ? result : null;
+    return result ? result : null;
 };
 
 // Función que divida un string en un array
 
+
+// Funcion que devuelva la suma de 2 numeros enteros
+
+// Función que devuelva la posición de un elemento dado en un arreglo 
+const search = 3;
+const getIndex = testArray => testArray.length > 0 ? testArray.indexOf(search) : null;
+
 module.exports = {
-  getMaxFromList,
-  getTodo,
-  isPair,
-  checkArray,
+    getMaxFromList,
+    getTodo,
+    isPair,
+    checkArray,
+    getIndex
 };
