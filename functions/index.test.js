@@ -18,6 +18,32 @@ describe('getMaxFromList', () => {
   });
 });
 
+describe('getTodo', () => {
+  it("Should return a todo",()=>{
+    return functions.getTodo().then(data => {
+      expect(data).toBeDefined()
+  });
+  })
+  
+  it("A todo should be an object with these props",()=>{
+    return functions.getTodo().then(data => {
+      expect(data).toEqual(
+        expect.objectContaining({
+        "userId": expect.any(Number),
+        "id": expect.any(Number),
+        "title": expect.any(String),
+        "completed": expect.any(Boolean)
+      })
+      )
+  });
+  })
+  
+  it("Should have title", ()=>{
+    return functions.getTodo().then(data => {
+      expect(data.title).toEqual('delectus aut autem')
+  });
+}) 
+})
 describe('isPair', () => {
   it('should return null if the param is not a number', () => {
     expect(functions.isPair('Testing')).toBe(null);
