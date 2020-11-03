@@ -6,13 +6,10 @@ const isPair = number => Number.isInteger(number) ? (number % 2 === 0) : null
 
 // Función que valide un password (sólo longitud y que sea alfanumérico)
 const verifyPassword = password => {
-  const checkLength = stringPassword => stringPassword.length >= 8 ? true : false;
-
-  const checkAlpha = stringPassword =>
-    stringPassword.match(/([a-z]+[0-9])|([0-9]+[a-z])/i) ? true : false;
-
-  if (password && checkAlpha(password) && checkLength(password)) return true;
-  else return false;
+  if (!password) return false;
+  const checkLength = stringPassword => stringPassword.length >= 8;
+  const checkAlpha = stringPassword => stringPassword.match(/([a-z]+[0-9])|([0-9]+[a-z])/i) ? true : false;
+  return (checkAlpha(password) && checkLength(password));
 };
 
 // Función que reciba una lista de números que pueden ser repetidos pero no consecutivos
