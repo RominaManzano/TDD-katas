@@ -5,6 +5,12 @@ const getMaxFromList = numbers => numbers.length > 0 ? Math.max(...numbers) : nu
 const isPair = number => Number.isInteger(number) ? (number % 2 === 0) : null
 
 // Función que valide un password (sólo longitud y que sea alfanumérico)
+const verifyPassword = password => {
+  if (!password) return false;
+  const checkLength = stringPassword => stringPassword.length >= 8;
+  const checkAlpha = stringPassword => stringPassword.match(/([a-z]+[0-9])|([0-9]+[a-z])/i) ? true : false;
+  return (checkAlpha(password) && checkLength(password));
+};
 
 // Función que reciba una lista de números que pueden ser repetidos pero no consecutivos
 const repeatedNotConsecutive = data => {
@@ -56,4 +62,5 @@ module.exports = {
   isPair,
   repeatedNotConsecutive,
   checkArray,
+  verifyPassword,
 };
