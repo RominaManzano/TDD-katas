@@ -9,13 +9,35 @@ const isPair = number => Number.isInteger(number) ? (number % 2 === 0) : null;
 // Función que reciba una lista de números que pueden ser repetidos pero no consecutivos
 
 // Función que haga/simule un fetch y devuelva la data esperada
+const axios = require('axios');
+const getTodo = () => axios.get("https://jsonplaceholder.typicode.com/todos/1")
+  .then(res=>res.data)
 
 // Función que reciba un array y valide si todos sus elementos son números 
+const checkArray = exampleArray => {
+  const regex = /^[0-9\b]+$/;
+  let result = '';
+
+  exampleArray.forEach(
+    exampleAr => {
+      if (regex.test(exampleAr)) {
+        result = 'yes'
+      } else {
+        result = 'no'
+      }
+    }
+  );
+
+  return result ? result : null;
+};
 
 // Función que divida un string en un array
 const getArray = text => Array.from(text);
 
 module.exports = {
   getMaxFromList,
+  getTodo,
+  isPair,
+  checkArray,
   getArray,
 };
