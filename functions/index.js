@@ -4,6 +4,9 @@ const getMaxFromList = numbers => numbers.length > 0 ? Math.max(...numbers) : nu
 // Función para validar si un número es par
 const isPair = number => Number.isInteger(number) ? (number % 2 === 0) : null
 
+// Función para sumar dos numeros
+const addTwoNumbers = (a, b) => a + b;
+
 // Función que valide un password (sólo longitud y que sea alfanumérico)
 
 // Función que reciba una lista de números que pueden ser repetidos pero no consecutivos
@@ -48,12 +51,15 @@ const checkArray = exampleArray => {
   return result ? result : null;
 };
 
+// 
+
 // Función que divida un string en un array
 
 module.exports = {
   getMaxFromList,
   getTodo,
   isPair,
+  addTwoNumbers,
   repeatedNotConsecutive,
   checkArray,
 };
