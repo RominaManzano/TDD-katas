@@ -51,7 +51,7 @@ describe('isPair', () => {
   });
 
   it('should return true from give even list', () => {
-    const tests = [2, 20, 22];
+    const tests = [2, 4];
 
     tests.forEach((number) => {
       expect(functions.isPair(number)).toBe(true);
@@ -66,6 +66,16 @@ describe('isPair', () => {
     });
   });
 });
+
+describe('addTwoNumbers', () => {
+  it('should return the result 0 if you add opposites', () => {
+    expect(functions.addTwoNumbers(2, -2)).toBe(0);
+  });
+  it('should return the result of add two numbers', () => {
+    expect(functions.addTwoNumbers(2, 4)).toBe(6);
+  });
+});
+
 
 describe('repeatedNotConsecutive', () => {
   it('should return false if they are not consecutive', () => {
