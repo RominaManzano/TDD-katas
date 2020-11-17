@@ -95,3 +95,15 @@ describe('checkArray', () => {
     });
   });
 });
+
+describe('getIndex', () => {
+  it('should return the index of the number 3 in the given list', () => {
+    const tests = [
+      { testArray: [1, 2, 3, 4], expected: 2 },
+      { testArray: [110, 43, 456, 'hola'], expected: -1 },
+    ];
+    tests.forEach(({ testArray, expected }) => {
+      expect(functions.getIndex(testArray)).toBe(expected);
+    });
+  });
+});

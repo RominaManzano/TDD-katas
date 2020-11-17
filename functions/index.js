@@ -50,10 +50,18 @@ const checkArray = exampleArray => {
 
 // Función que divida un string en un array
 
+
+// Funcion que devuelva la suma de 2 numeros enteros
+
+// Función que devuelva la posición de un elemento dado en un arreglo 
+const search = 3;
+const getIndex = testArray => testArray.length > 0 ? testArray.indexOf(search) : null;
+
 module.exports = {
   getMaxFromList,
   getTodo,
   isPair,
   repeatedNotConsecutive,
   checkArray,
+  getIndex
 };
